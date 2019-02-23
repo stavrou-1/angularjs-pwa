@@ -4,7 +4,8 @@
   "description": "angularjs pwa shopping cart prototype",
   "main": "app.js",
   "scripts": {
-    "test": "yarn start"
+    "test": "yarn start",
+    "start":  "node server.js"
   },
   "repository": {
     "type": "git",
