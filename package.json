@@ -1,0 +1,25 @@
+{
+  "name": "pwa-shopping-cart",
+  "version": "1.0.0",
+  "description": "angularjs pwa shopping cart prototype",
+  "main": "app.js",
+  "scripts": {
+    "test": "yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stavrou-1/angularjs-pwa.git"
+  },
+  "keywords": [
+    "pwa",
+    "angularjs",
+    "shopping",
+    "cart"
+  ],
+  "author": "Yiannis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stavrou-1/angularjs-pwa/issues"
+  },
+  "homepage": "https://github.com/stavrou-1/angularjs-pwa#readme"
+}

@@ -1,0 +1,168 @@
+<div class="container margin-bottom">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 align-center">
+                <h1>Awesome Tees</h1>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-lg-3 align-center with-padding" ng-repeat="product in cartData track by $index" ng-show="cartData.length > 0">
+                <div class="product-contain product-list">
+                    <img ng-src="{{product.imgSrc}}" class="product-images" alt="blue image"/>
+                    <ul>
+                            <li><h5>Product: <b>{{product.name}}</b></h5></li>
+                            <li><p>Price: <em>{{product.price | currency}}</em></p></li>
+                            <li ng-show="product.quantity > 0">Quantity: {{product.quantity}}</li>
+                            <li>
+                               <button ng-show="product.quantity > 0" class="btns btn btn-primary" ng-click="addToCart(product)">
+                                   <span>Add to cart</span>
+                                   <i class="material-icons">add_circle_outline</i>
+                                </button>
+                                <button ng-show="product.quantity === 0" class="btns btn btn-secondary" disabled>
+                                    Sold Out
+                                </button>
+                            </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="shop-options" ng-show="!editorOpen">
+    <div class="container">
+        <!-- choose options -->
+        <div class="row">
+                <button class="left-option"  ng-click="showCart()">
+                        <i class="material-icons">shopping_cart</i>
+                </button>
+                <button class="right-option" ng-click="toggleEditor()">
+                    <i class="material-icons">library_add</i>
+                </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="cart-details-wrap" ng-show="!showsShoppingCart">
+    <button class="cart-details-toggle" ng-click="showCart()">
+        <i class="material-icons">shopping_cart</i>
+        <span ng-show="myCart.length > 0">{{myCart.length}}</span>
+    </button>
+</div>
+
+<div class="cart-details" ng-show="showsShoppingCart">
+    <div class="row">
+        <button ng-click="showCart()" class="btns flexRight">
+            <i class="material-icons">close</i>
+        </button>
+    </div>
+    <p class="cart-text" ng-show="myCart.length === 0">Your cart is empty!</p>
+    <ul ng-show='myCart.length > 0 && myCart.length <= 6' class="cartList">
+        <li ng-repeat="item in myCart track by $index">
+            <strong>{{item.name}}</strong> 
+            <span ng-click="removeFromCart(product)">
+                    <button class="btns relativeBtn">
+                            <i class="material-icons">close</i>
+                    </button>
+                </span>
+            <ul>
+                <li>{{item.price | currency}}</li>
+                <li>{{item.quantity}} count</li>
+            </ul>
+        </li>
+    </ul>
+    <ul ng-if="myCart.length > 6">
+            <li>Whoa. You have {{myCart.length}} items in your cart! Easy tiger.</li>
+        </ul>
+    <div>
+        <hr/>
+        <p class="float-right"> <strong>Total: </strong>
+            <span>{{total | currency}}</span>
+        </p>
+        <div>
+            <span ng-click="removeCart()" ng-show="myCart.length > 0">
+                    <button class="float-right btns">
+                            <i class="material-icons">remove_shopping_cart</i>: 
+                    </button>
+                    <span>Empty Cart</span>
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<!-- product editor -->
+<div class="product-editor" ng-show="editorOpen">
+    <div class="container">
+        <div class="row col-lg-12">
+            <h2>Add a  product</h2>
+            <div class="">
+                <form ng-submit=addItem() class="form-horizontal" novalidate>
+                    <ng-form name="shoppingCartForm">
+                        <div class="form-group">
+                            <label for="item" class="col-sm-2 control-label">Item</label>
+                            <div class="col-sm-10">
+                                    <input type="text" name="item" class="form-control" ng-class="{ 'has-error':(shoppingCartForm.item.$invalid && !shoppingCartForm.item.$pristine) || (shoppingCartForm.item.$invalid && submitted)}" required="" ng-model="item">
+                                    <p class="errorNote" ng-show="submitted && shoppingCartForm.item.$error.required">Item is required.</p>
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="price" class="col-sm-2 control-label">Price</label>
+                            <div class="col-sm-10">
+                                    <input currency-formatter="currency" type="text" name="price" 
+                                    ng-pattern="/^\-?\d+(\.\d+)?$/" ng-model="price" class="form-control" ng-class="{ 'has-error': (shoppingCartForm.price.$invalid && submitted)}"  ng-required="true" />
+                                    <p class="errorNote" ng-show="(shoppingCartForm.price.$error.required) || (submitted && shoppingCartForm.price.$error.required) || (submitted && shoppingCartForm.price.$invalid)">Invalid Price. Price must be in the following format: 45 or 45.50.</p>
+                            </div>
+                        </div>
+            
+                        <div clas="form-group">
+                            <label class="col-sm-2 control-label">Quantity</label>
+                            <div class="col-sm-10">
+                                <input type="range" min="1" max="500" ng-model="quantity"/> {{quantity}}
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default btn-primary">Insert product</button>
+                            </div>
+                        </div>
+                    </ng-form>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button class="editor-close"  ng-show="cartData.length > 0" ng-click="toggleEditor()">X</button>
+    <div class="product-block">
+        <div class="container">
+            <!-- show product editor -->
+            <div ng-show="cartData.length === 0">
+                <h3>Your shop is empty :( Add some products!</h3>
+            </div>
+            <div class="row" ng-show="cartData.length > 0">
+                <div class="col-lg-12">
+                        <table class="table">
+                            <h2>Product Editor</h2>
+                            <thead>
+                                <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th colspan="2">Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in cartData track by $index">
+                                <td>{{item.name}}</td>
+                                <td>{{item.price}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td class="alignRight">
+                                    <button ng-click="removeItem($index)" class="btn btn-default">Remove</button>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

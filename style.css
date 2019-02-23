@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.btns {
+    border: 0;
+    display: inline-flex;
+}
+.btns span {
+    padding: 0.2em;
+}
+.btns.relativeBtn {
+    position: relative;
+    margin: 0.3em;
+    top: 0.5em;
+}
+.float-right {
+    text-align: right;
+}
+.container {
+    max-width: 1000px;
+}
+.align-center {
+    text-align: center;
+}
+.align-center.with-padding {
+    padding: 3em;
+}
+.has-error {
+    border: 0.15em solid red;
+    color: red;
+}
+.margin-bottom {
+    margin-bottom: 10em;
+}
+.errorNote {
+    color: red;
+}
+.flexRight {
+    text-align: right;
+    display: flex;
+    float: right;
+}
+.ng-invalid.ng-touched { 
+    border: 0.15em solid red; 
+    color: red; 
+}
+.product-contain ul li {
+    list-style-type: none;
+}
+.product-contain.product-list {
+    text-align: left;
+}
+.btn-secondary[disabled],
+.btn-primary[disabled] {
+    background:gainsboro;
+    cursor: not-allowed;
+}
+/* cart-details-wrap */
+.cart-details-wrap {
+    padding: 2em;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    left: 0;
+}
+.cartList li {
+    list-style-type: none;
+    text-align: left;
+}
+.cart-details-wrap .cart-details-toggle {
+    padding: 1em;
+    color: black;
+    background: none;
+    background-color: transparent;
+    border: 0;
+}
+.cart-details-wrap .cart-details-toggle i {
+    font-size: 1.8em;
+}
+/* PRODUCT IMAGES */
+.product-images {
+    display: block;
+    width: 100%;
+}
+
+/* SHOP OPTIONS */
+.shop-options {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+.shop-options .left-option,
+.shop-options .right-option {
+    width: 50%;
+    background-color: #f3f3f3;
+    padding: 1em 3.3em;
+    border: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+}
+.cart-details {
+    background-color: #FFF;
+    border: 1px solid black;
+    padding: 2em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow-y: scroll;
+
+    z-index: 333;
+    width: 100%;
+}
+.cart-details-toggle {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+/* PRODUCT EDITOR */
+.product-editor {
+    background-color: #f3f3f3;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    padding-bottom: 4em;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.product-editor .product-block {
+    position: relative;
+}
+.product-editor .table {
+    margin: 0;
+    padding: 0;
+}
+.product-editor .editor-close {
+    position: fixed;
+    right: 0;
+    left:0;
+    width: 100%;
+    bottom: 0;
+    z-index: 3;
+    background-color: transparent;
+    border: 0;
+    padding: 0.5em 1em;
+    margin: 0;
+    color: #666;
+    font-size: 2em
+}
+.product-editor h2 {
+    border-bottom: 1px solid gray;
+    padding: 0.5em 0;
+    width: 100%;
+    margin-top:1em;
+}
+.product-editor .table tbody tr td {
+    padding: 0 0.3em;
+    margin: 0;
+    line-height: 0;
+    border: 0;
+}
+.product-editor .table tbody td.alignRight {
+    text-align: right;
+}
+.product-editor .table thead tr th {
+    border: 0;
+    padding: 1em 0.3em;
+}
+.table>td {
+    border: 0;
+    padding-top: 1.5em;
+}
+@media screen and (min-width: 600px) {
+    .product-editor .editor-close {
+        width: 5em;
+        right: 0;
+        left: initial;
+        top: 0;
+        bottom:initial;
+        position: absolute;
+    }
+    .product-images {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .shop-options .right-option {
+        width: 100%;
+    }
+    .cart-details,
+    .cart-details-toggle {
+        display: block;
+    }
+    .shop-options .left-option {
+        display: none;
+    }
+    .align-center.with-padding {
+        padding: 3em;
+        height: 28em;
+        /* border: 0.1em solid black; */
+    }
+    .cart-details {
+        display: none;
+        background-color: #FFF;
+        border: 1px solid black;
+        padding: 2em;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 20em;
+        overflow-y: scroll;
+    
+        top: 0;
+        z-index: 333;
+        display: block;
+    }
+}
