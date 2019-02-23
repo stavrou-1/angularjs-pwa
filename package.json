@@ -5,11 +5,15 @@
   "main": "app.js",
   "scripts": {
     "test": "yarn start",
-    "start":  "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stavrou-1/angularjs-pwa.git"
+  },
+  "engines": {
+    "node": "10.5.0",
+    "npm": "6.7.0"
   },
   "keywords": [
     "pwa",
@@ -22,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/stavrou-1/angularjs-pwa/issues"
   },
-  "homepage": "https://github.com/stavrou-1/angularjs-pwa#readme"
+  "homepage": "https://github.com/stavrou-1/angularjs-pwa#readme",
+  "devDependencies": {
+    "@angular/cli": "^7.3.3",
+    "@angular/compiler-cli": "^7.2.6"
+  }
 }
