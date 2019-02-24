@@ -1,0 +1,8 @@
+{
+    "name": "AngularJS Progressive Web App (PWA)",
+    "description": "AngularJS Progressive Web App (PWA)",
+    "repository": "https://github.com/stavrou-1/angularjs-pwa.git",
+    "keywords": ["node", "express", "heroku"],
+    "image": "heroku/nodejs"
+  }
+  
