@@ -1,4 +1,4 @@
-angular.module('app').controller("MainCtrl", ['$scope', function($scope) {
+angular.module('app').controller("MainCtrl", ['$scope', '$state', function($scope, $state) {
     $scope.msg = "MSG";
     $scope.quantity = 1;
     $scope.editorOpen = false;
@@ -16,26 +16,14 @@ angular.module('app').controller("MainCtrl", ['$scope', function($scope) {
     ];
 
     $scope.cartData = [
-        {"name": "Cool Shirt", "quantity" : 25, "price": 12.55, "imgSrc": '../images/black-tshirt.jpeg'},
-        {"name": "Awesome Shirt", "quantity": 2, "price": 19.99, "imgSrc": '../images/gucci-shirt.jpeg'},
-        {"name": "Funky Shirt", "quantity": 3, "price": 14.99, "imgSrc": '../images/matching.jpeg'},
-        {"name": "Groovy Shirt", "quantity" : 2, "price": 15.25, "imgSrc": '../images/multiple-shirts.jpeg'},
-        {"name": "Bright Shirt", "quantity": 1, "price": 14.99, "imgSrc": '../images/outcast.jpeg'},
-        {"name": "Rockin' Shirt", "quantity": 1, "price": 10.25, "imgSrc": '../images/shoes.jpeg'},
-        {"name": "Sweet Shirt", "quantity" : 1, "price": 12.55, "imgSrc": '../images/black-tshirt.jpeg'}  
+        {"id": 1,"name": "Cool Shirt", "quantity" : 25, "price": 12.55, "imgSrc": '../images/black-tshirt.jpeg'},
+        {"id": 2,"name": "Awesome Shirt", "quantity": 2, "price": 19.99, "imgSrc": '../images/gucci-shirt.jpeg'},
+        {"id": 3,"name": "Funky Shirt", "quantity": 3, "price": 14.99, "imgSrc": '../images/matching.jpeg'},
+        {"id": 4,"name": "Groovy Shirt", "quantity" : 2, "price": 15.25, "imgSrc": '../images/multiple-shirts.jpeg'},
+        {"id": 5,"name": "Bright Shirt", "quantity": 1, "price": 14.99, "imgSrc": '../images/outcast.jpeg'},
+        {"id": 6,"name": "Rockin' Shirt", "quantity": 1, "price": 10.25, "imgSrc": '../images/shoes.jpeg'},
+        {"id": 7,"name": "Sweet Shirt", "quantity" : 1, "price": 12.55, "imgSrc": '../images/black-tshirt.jpeg'}  
     ];
-    
-    registerSW();
-
-    async function registerSW() {
-        if ('serviceWorker' in navigator) {
-            try {
-                await navigator.serviceWorker.register('./sw.js');
-            } catch (error) {
-                console.error('SW registration failed.');
-            }
-        }
-    }
 
     $scope.toggleEditor = function() {
         $scope.editorOpen = !$scope.editorOpen;
@@ -78,6 +66,7 @@ angular.module('app').controller("MainCtrl", ['$scope', function($scope) {
     $scope.addItem = function() {
         $scope.submitted = true;
         var newItem = {
+            "id": $scope.cartData.length += 1,
             "name": $scope.item,
             "quantity": $scope.quantity,
             "price": $scope.price,

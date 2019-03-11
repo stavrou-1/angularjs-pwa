@@ -3,6 +3,7 @@
     "short_name": "ATees",
     "start_url": "/#/",
     "display": "standalone",
+    "theme_color": "#007BFF",
     "background_color": "#FFF",
     "description": "An awesome tshirt shopping cart app.",
     "icons": [
