@@ -1,8 +1,9 @@
 {
     "name": "Awesome Tees",
     "short_name": "ATees",
-    "start_url": "/#/",
-    "display": "standalone",
+    "start_url": "./",
+    "display": "fullscreen",
+    "orientation": "portrait",
     "theme_color": "#007BFF",
     "background_color": "#FFF",
     "description": "An awesome tshirt shopping cart app.",

@@ -8,8 +8,8 @@
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#007BFF">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap-4.3.1.css"/>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
     <script>
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('./sw.js')
@@ -22,7 +22,7 @@
         }
     </script>
   </head>
-  <body ng-controller="MainCtrl">
+  <body>
     <div ui-view></div>
   </body>
 

@@ -176,6 +176,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/libs/bootstrap-4.3.1.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/libs/bootstrap-4.3.1-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/libs/jquery-3.3.1.min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -248,11 +258,11 @@
 		"q": 100
 		},
 	"/style.css": {
-		"aP": 1,
+		"aP": 0,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/style-min.css",
 		"oF": 0,
 		"oS": 3
@@ -2114,7 +2124,7 @@
 		"transpilerStyle": 1
 		},
 	"languageDefaultsCSS": {
-		"autoOutputAction": 0,
+		"autoOutputAction": 1,
 		"autoOutputPathFilenamePattern": "*-min.css",
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
@@ -2122,7 +2132,7 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
 		"outputStyle": 3,
-		"shouldRunAutoprefixer": 1,
+		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0
 		},
 	"languageDefaultsGIF": {
