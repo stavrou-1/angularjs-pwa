@@ -1,7 +1,6 @@
 var express = require('express'),
        secure = require('ssl-express-www'),
-       app = express(),
-       http = express.createServer();
+       app = express();
 
 app.use(express.static(__dirname));
 app.use(secure);
@@ -9,8 +8,11 @@ app.get('/', function(req, res) {
     res.sendfile('index.html', {root: __dirname })
 });
 
-http.get('*', function(req, res) {
-    if (!req.secure() && req.protocol === 'http') {
+app.use(function(req, res, next) {
+    if (req.secure) {
+        // request was via https, so do no special handling
+        next();
+    } else {
         res.redirect('https://' + req.headers.host + req.url);
     }
 });
