@@ -32,9 +32,12 @@
     "@angular/compiler-cli": "^7.2.6"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "heroku-ssl-redirect": "^0.0.4",
-    "ssl-express-www": "^3.0.3"
+    "proxy": "^0.2.4",
+    "ssl-express-www": "^3.0.3",
+    "trust": "^0.1.0"
   }
 }
