@@ -1,9 +1,10 @@
 var express = require('express'),
        secure = require('ssl-express-www'),
+       sslRedirect = require('heroku-ssl-redirect'),
        app = express();
 
 app.use(express.static(__dirname));
-app.use(secure);
+app.use(sslRedirect);
 app.get('/', function(req, res) {
     res.sendfile('index.html', {root: __dirname })
 });
