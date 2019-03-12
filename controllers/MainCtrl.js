@@ -1,4 +1,4 @@
-angular.module('app').controller("MainCtrl", ['$scope', '$state', function($scope, $state) {
+app.controller("MainCtrl", ['$scope', '$state', function($scope, $state) {
     $scope.msg = "MSG";
     $scope.quantity = 1;
     $scope.editorOpen = false;

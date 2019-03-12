@@ -154,13 +154,13 @@
 		"oAP": "/index.html",
 		"oF": 0
 		},
-	"/libs/angular-1.3.14.min.js": {
+	"/libs/angular-1.3.0.min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
 		"oA": 1,
-		"oAP": "/libs/angular-1.3.14.min-min.js",
+		"oAP": "/libs/angular-1.3.0.min-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
