@@ -4,7 +4,7 @@
     "start_url": "./",
     "display": "fullscreen",
     "orientation": "portrait",
-    "theme_color": "#007BFF",
+    "theme_color": "#0052B8",
     "background_color": "#FFF",
     "description": "An awesome tshirt shopping cart app.",
     "icons": [

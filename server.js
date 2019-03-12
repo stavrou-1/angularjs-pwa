@@ -9,20 +9,20 @@ app.get('/', function(req, res) {
     res.sendfile('index.html', {root: __dirname })
 });
 
-// app.use(function(req, res, next) {
-//     if (req.secure) {
-//         return next();
-//     }
-//     res.redirect('https://' + req.headers.host + req.url);
-// });
-
-app.use(function(req, res, next){
-    if(req.header('x-forwarded-proto') !== 'https'){
-        res.redirect('https://' + req.header('host') + req.url);
-    }else{
-        next();
+app.use(function(req, res, next) {
+    if (req.secure) {
+        return next();
     }
-})
+    res.redirect('https://' + req.headers.host + req.url);
+});
+
+// app.use(function(req, res, next){
+//     if(req.header('x-forwarded-proto') !== 'https'){
+//         res.redirect('https://' + req.header('host') + req.url);
+//     }else{
+//         next();
+//     }
+// })
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

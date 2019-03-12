@@ -17,6 +17,10 @@ body {
     margin: 0.3em;
     top: 0.5em;
 }
+button.btns.btn-primary,
+button.btn.btn-primary {
+    background-color: #0052B8;
+}
 .float-right {
     text-align: right;
 }
